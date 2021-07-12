@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\students;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\grade;
-use App\Models\student;
-use App\Models\attendance;
 
-
-class AttendancesController extends Controller
+class TeachersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +14,7 @@ class AttendancesController extends Controller
      */
     public function index()
     {
-        $grades = grade::all();
-        $attendances = attendance::all();
-        return view('Teacher.Attendance.index', compact('grades','attendances'));
+        return view('Student.Teacher.index');
     }
 
     /**
@@ -29,8 +24,7 @@ class AttendancesController extends Controller
      */
     public function create()
     {
-        $students = student::all();
-        return view('Teacher.Attendance.Create', compact('students'))->with('no',1);
+        //
     }
 
     /**

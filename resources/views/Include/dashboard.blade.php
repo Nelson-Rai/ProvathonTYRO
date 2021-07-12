@@ -3,7 +3,7 @@
     <h2 class="text-2xl font-semibold ">Dashboard</h2>
     <div class="flex items-center h-14 border-2 border-black rounded-full overflow-hidden p-2">
         <span><i class="las la-search la-2x"></i></span>
-        <input class="h-12 border-none" type="text" placeholder="Search Class">
+        <input class="h-12 border-none" type="text" placeholder="Search Here">
     </div>
     <div class="flex items-center">
         <img class="h-12 w-12 border-gray-200 rounded-full" src="{{ asset('img/user.jpg') }}" alt="">

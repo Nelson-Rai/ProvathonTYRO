@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\grade;
 
 class AssignmentsController extends Controller
 {
@@ -13,7 +14,8 @@ class AssignmentsController extends Controller
      */
     public function index()
     {
-        return view('Teacher.Assignment.index');
+        $grades = grade::all();
+        return view('Teacher.Assignment.index', compact('grades'));
     }
 
     /**

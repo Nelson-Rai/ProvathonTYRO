@@ -32,7 +32,8 @@
                     <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('teacher.askme.index') }}"><i class="las la-question la-2x"></i><span class=" ml-3">Ask Me</span></a>
                     <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('teacher.assignment.index') }}"><i class="las la-book la-2x"></i><span class=" ml-3">Assignment</span></a>
                     <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('teacher.class.index') }}"><i class="las la-inbox la-2x"></i></i><span class=" ml-3">Class</span></a>
-                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('teacher.student.index') }}"><i class="las la-users la-2x"></i><span class=" ml-3">Students</span></a>
+                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('teacher.index') }}"><i class="las la-chalkboard-teacher la-2x"></i><span class=" ml-3">Teachers</span></a>
+                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('teacher.student.index') }}"><i class="las la-users la-2x"></i><span class=" ml-3">Friends</span></a>
                     <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="#"><i class="las la-cog la-2x"></i><span class=" ml-3">Settings</span></a>
                     <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('logout') }}"><i class="las la-sign-out-alt la-2x"></i><span class=" ml-3">Log Out</span></a>
                 </div>

@@ -10,6 +10,8 @@ use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\routinesController;
 use App\Http\Controllers\AssignmentsController;
 use App\Http\Controllers\askMeController;
+use App\Http\Controllers\students\TeachersController;
+
 
 
 
@@ -31,7 +33,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', [TeacherController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::prefix('teacher')->name('teacher.')->middleware(['auth'])->group(function () {
+
+Route::get('/dashboard', [TeacherController::class, 'index'])->name('dashboard');
 Route::resource('/class', classesController::class);
 Route::resource('/attendance', attendancesController::class);
 Route::resource('/homework', HomeworksController::class);
@@ -40,7 +44,10 @@ Route::resource('/student', StudentsController::class);
 Route::resource('/routine', routinesController::class);
 Route::resource('/assignment', AssignmentsController::class);
 Route::resource('/askme', askMeController::class);
+Route::resource('/teacher', TeachersController::class);
 
+
+});
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\grade;
 
 class classesController extends Controller
 {
@@ -13,7 +14,8 @@ class classesController extends Controller
      */
     public function index()
     {
-        return view('Teacher.Class.index');
+        $grades = grade::all();
+        return view('Teacher.Class.index', compact('grades'));
     }
 
     /**
@@ -23,7 +25,7 @@ class classesController extends Controller
      */
     public function create()
     {
-        //
+        return view('Teacher.Class.create');
     }
 
     /**
@@ -34,7 +36,22 @@ class classesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $request->validate([
+            'class_Name' => 'required',
+            'subject'=>'required',
+        ]);
+
+            $grade = grade::Create([
+            'faculty' => $request->input('faculty'),
+            'class_Name' => $request->input('class_name'),
+            'year' => $request->input('year'),
+            'subject' => $request->input('subject'),
+            'start_from' => $request->input('start_from'),
+
+        ]);
+        return redirect('/class/index');
+
     }
 
     /**
