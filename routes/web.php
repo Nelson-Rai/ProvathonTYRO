@@ -3,6 +3,18 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\classesController;
+use App\Http\Controllers\AttendancesController;
+use App\Http\Controllers\HomeworksController;
+use App\Http\Controllers\TestsController;
+use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\routinesController;
+use App\Http\Controllers\AssignmentsController;
+use App\Http\Controllers\askMeController;
+
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +33,13 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [TeacherController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::resource('/class', classesController::class);
-
+Route::resource('/attendance', attendancesController::class);
+Route::resource('/homework', HomeworksController::class);
+Route::resource('/test', TestsController::class);
+Route::resource('/student', StudentsController::class);
+Route::resource('/routine', routinesController::class);
+Route::resource('/assignment', AssignmentsController::class);
+Route::resource('/askme', askMeController::class);
 
 
 // Route::get('/dashboard', function () {

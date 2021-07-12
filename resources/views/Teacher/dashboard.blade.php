@@ -1,5 +1,9 @@
 @extends("Layout.app")
 
+@section('header')
+    @include('Include.dashboard')
+@endsection
+
 @section('content')
     <div class="flex items-center mt-4 space-x-3">
         <div class="flex items-center justify-around w-64 h-28 bg-indigo-600 rounded-lg p-3">
