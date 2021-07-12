@@ -7,11 +7,12 @@
     <title>Pedagogy Tuition</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
 </head>
 <body class="bg-gray-200">
     <div class="flex w-full h-full ">
             {{-- Sidebar --}}
-            <div class="flex flex-col flex-initial justify-center bg-blue-800 h-full pl-3 ">
+            <div class="flex flex-col flex-initial justify-center bg-blue-800 h-full px-3 ">
                 
                 {{-- Brand --}}
                 <div class="flex items-center p-3">

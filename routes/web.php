@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\classesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [TeacherController::class, 'index'])->middleware(['auth'])->name('dashboard');
-
+Route::resource('/class', classesController::class);
 
 
 
