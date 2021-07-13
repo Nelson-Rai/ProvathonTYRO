@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\students;
+namespace App\Http\Controllers\student;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RoutinesController extends Controller
+class SaskMeController extends Controller
 {
     /**
      * Display a listing of the resource.

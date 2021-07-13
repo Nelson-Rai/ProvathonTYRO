@@ -5,18 +5,23 @@
 @endsection
 
 @section('content')
-<div class="flex items-center mt-4 space-x-3">
+
+<div class="mt-4 grid grid-flow-row grid-cols-3 grid-rows-3 gap-4">
     @foreach ($grades as $grade)
-        <div class="flex items-center justify-around w-1/3 h-28 bg-indigo-600 rounded-lg ml-2 p-3">
-            <div class="flex flex-col  text-white">
-                <h2 class="text-4xl font-bold ">{{ $grade->class_Name }}</h2>
-                <p class="text-xl ">56 Students</p>
-            </div>
-            <div class="flex flex-col space-y-3">
-                <a class="bg-pink-500 rounded-lg p-2 text-white font-semibold" href="{{ route('teacher.attendance.create') }}">Take Attendance<i class="ml-1 las la-arrow-right la-1x"></i></a>
-            <a class="bg-green-500 rounded-lg p-2 text-white font-semibold" href="{{ route('teacher.attendance.show',$attendances) }}">Show Attendance<i class="ml-1 las la-arrow-right la-1x"></i></a>
-            </div>
-        </div>
-    @endforeach
+    <div
+    class="container flex items-center justify-between rounded-lg bg-indigo-700 text-indigo-100 px-8 py-4 w-62 h-28">
+    <div class="flex flex-col items-center">
+        <a href="homework-page.html">
+            <h2 class="font-semibold text-2xl">{{ $grade->class_Name }}</h2>
+            <h3>{{ $grade->year }}</h3>
+            <p>{{ $grade->subject }}</p>
+        </a>
+    </div>
+    <div class="flex flex-col">
+        <a href="{{ route('attendance.create') }}"><h2 class="text-sm bg-yellow-500 rounded-lg text-green-100 px-2 py-1 mt-2">Take Attendance</h2></a>
+        <a href="{{ route('attendance.show', $attendances) }}"><h2 class="text-sm bg-green-500 rounded-lg text-green-100 px-2 py-1 mt-2">Attendance History</h2></a>
+    </div>
+    
 </div>
+@endforeach
 @endsection

@@ -8,23 +8,22 @@
 <div class="flex flex-col mt-3">
         <div class="flex space-x-4 w-full">
             <div >
-                <select class="flex-1 w-96 bg-white" name="" id="">
-                    <option value="">Select Class</option>
-                    <option value="">Ten</option>
-                    <option value="">Eleven</option>
-                    <option value="">Twelve</option>
-                    <option value="">BSc</option>
-                    <option value="">BCA</option>
-                </select>
+                
+                    <select class="flex-1 w-96 bg-white" name="" id="">
+                        <option value="">Select Class</option>
+                        @foreach ($grades as $grade)
+                            <option value="">{{ $grade->class_Name }}</option>
+                        @endforeach
+                    </select>
+                
             </div>
             <div >
                 <select class="flex-1 w-96 bg-white" name="" id="">
                     <option value="">Select Subject</option>
-                    <option value="">Ten</option>
-                    <option value="">Eleven</option>
-                    <option value="">Twelve</option>
-                    <option value="">BSc</option>
-                    <option value="">BCA</option>
+                        @foreach ($grades as $grade)
+                            <option value="">{{ $grade->subject }}</option>
+                        @endforeach
+                    
                 </select>
             </div>
         </div>
@@ -49,9 +48,9 @@
                             <td>{{ $student->class }}</td>
                             <td>{{ $student->address }}</td>
                             <td>{{ $student->phone }}</td>
-                            <td><a href="{{ route('teacher.student.show',$student) }}"><i class="fa fa-user" aria-hidden="true"></i></a>
+                            <td><a href="{{ route('student.show',$student) }}"><i class="fa fa-user" aria-hidden="true"></i></a>
                             <a href="#"><i class="fa fa-comments ml-2" aria-hidden="true"></i></a>
-                            <a href="{{ route('teacher.student.destroy',$student) }}"><i class="fas fa-trash-alt ml-2"></i></a>
+                            <a href="{{ route('student.destroy',$student) }}"><i class="fas fa-trash-alt ml-2"></i></a>
                             </td>
                         </tr>
                     </tbody>

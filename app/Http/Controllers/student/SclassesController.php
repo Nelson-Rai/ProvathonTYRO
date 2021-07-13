@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\students;
+namespace App\Http\Controllers\student;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\grade;
 
-class AssignmentController extends Controller
+class SclassesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class AssignmentController extends Controller
      */
     public function index()
     {
-        //
+        $grades = grade::all();
+        return view('Student.Class.index', compact('grades'));
     }
 
     /**

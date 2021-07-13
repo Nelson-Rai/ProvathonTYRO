@@ -9,6 +9,8 @@ class grade extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+    
     protected $fillable = [
         'class_Name',
         'faculty',

@@ -36,21 +36,22 @@ class classesController extends Controller
      */
     public function store(Request $request)
     {
-        
         $request->validate([
+            'faculty' => 'required',
             'class_Name' => 'required',
-            'subject'=>'required',
+            'subject' => 'required',
+            'start_from' => 'required',
         ]);
-
+        
             $grade = grade::Create([
             'faculty' => $request->input('faculty'),
             'class_Name' => $request->input('class_name'),
             'year' => $request->input('year'),
             'subject' => $request->input('subject'),
             'start_from' => $request->input('start_from'),
-
+            
         ]);
-        return redirect('/class/index');
+        return redirect('/class');
 
     }
 
@@ -62,7 +63,8 @@ class classesController extends Controller
      */
     public function show($id)
     {
-        //
+        $grades = grade::all();
+        return view('Teacher.Class.history', compact('grades'));
     }
 
     /**

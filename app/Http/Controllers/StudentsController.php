@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\student;
+use App\Models\grade;
+
 
 class StudentsController extends Controller
 {
@@ -15,7 +17,8 @@ class StudentsController extends Controller
     public function index()
     {
         $students = student::all();
-        return view('Teacher.Students.index', compact('students'))->with('no',1);
+        $grades = grade::all();
+        return view('Teacher.Students.index', compact('students','grades'))->with('no',1);
     }
 
     /**

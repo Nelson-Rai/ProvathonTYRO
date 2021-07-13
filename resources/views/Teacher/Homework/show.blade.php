@@ -1,9 +1,9 @@
 @extends('Layout.app')
 
 @section('header')
-    @include('include.askMe')   
+    @include('Include.homework')
 @endsection
 
 @section('content')
-    
+    0
 @endsection

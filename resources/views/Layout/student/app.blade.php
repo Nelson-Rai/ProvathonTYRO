@@ -23,17 +23,17 @@
 
                 {{-- Sidebar Navigation --}}
                 <div class=" mt-1 flex flex-col p-2 text-blue-100 text-lg"> 
-                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('dashboard') }}"><i class="las la-tachometer-alt la-2x"></i><span class=" ml-3">Dashboard</span></a>
+                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('stdashboard') }}"><i class="las la-tachometer-alt la-2x"></i><span class=" ml-3">Dashboard</span></a>
                     <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="#"><i class="las la-sms la-2x"></i><span class=" ml-3">Chats</span></a>
-                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('homework.index') }}"><i class="las la-book-open la-2x"></i><span class=" ml-3">Homework</span></a>
-                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('test.index') }}"><i class="las la-book-reader la-2x"></i><span class=" ml-3">Test</span></a>
-                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('attendance.index') }}"><i class="las la-address-book la-2x"></i><span class=" ml-3">Attendance</span></a>
-                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('routine.index') }}"><i class="las la-calendar-alt la-2x"></i><span class=" ml-3">Routine</span></a>
-                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('askme.index') }}"><i class="las la-question la-2x"></i><span class=" ml-3">Ask Me</span></a>
-                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('assignment.index') }}"><i class="las la-book la-2x"></i><span class=" ml-3">Assignment</span></a>
-                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('class.index') }}"><i class="las la-inbox la-2x"></i></i><span class=" ml-3">Class</span></a>
-                    {{-- <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('index') }}"><i class="las la-chalkboard-teacher la-2x"></i><span class=" ml-3">Teachers</span></a> --}}
-                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('student.index') }}"><i class="las la-users la-2x"></i><span class=" ml-3">Students</span></a>
+                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="#"><i class="las la-book-open la-2x"></i><span class=" ml-3">Homework</span></a> 
+                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="#"><i class="las la-book-reader la-2x"></i><span class=" ml-3">Test</span></a>
+                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="#"><i class="las la-calendar-alt la-2x"></i><span class=" ml-3">Routine</span></a>
+                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="#"><i class="las la-question la-2x"></i><span class=" ml-3">Ask Me</span></a>
+                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="#"><i class="las la-book la-2x"></i><span class=" ml-3">Assignment</span></a>
+                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="{{ route('sclass.index') }}"><i class="las la-inbox la-2x"></i></i><span class=" ml-3">Class</span></a>
+                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="#"><i class="las la-chalkboard-teacher la-2x"></i><span class=" ml-3">Teachers</span></a>
+                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="#"><i class="las la-users la-2x"></i><span class=" ml-3">Friends</span></a>
+                    <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="#"><i class="las la-credit-card la-2x"></i><span class=" ml-3">Payments</span></a>
                     <a class="flex items-center my-1 hover:bg-blue-700 rounded-lg p-2" href="#"><i class="las la-cog la-2x"></i><span class=" ml-3">Settings</span></a>
                     <form method="POST" action="http://127.0.0.1:8000/logout">
                         @csrf
