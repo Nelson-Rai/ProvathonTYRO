@@ -8,8 +8,14 @@
     <div class="flex items-center">
         <img class="h-12 w-12 border-gray-200 rounded-full" src="{{ asset('img/user.jpg') }}" alt="">
         <div class="container mx-4 text-center">
-            <a href="#"><h2 class="text-lg font-mono font-semibold">{{ Auth::user()->name }}</h2></a>
-            <p class="text-sm font-mono">Teacher</p>
+            <a href="{{ route('profile.index') }}"><h2 class="text-lg font-mono font-semibold">{{ Auth::user()->name }}</h2></a>            @if (Auth::user()->hasRole('Admin'))
+            @if (Auth::user()->hasRole('Admin'))
+                <p class="text-sm font-mono">Admin</p>
+            @elseif (Auth::user()->hasRole('Teacher'))
+                <p class="text-sm font-mono">Teacher</p>
+            @elseif (Auth::user()->hasRole('Student')) 
+               <p class="text-sm font-mono">Student</p>
+            @endif
         </div>
     </div>
 </div>

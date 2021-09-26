@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\grade;
+use Illuminate\Support\Facades\Auth;
+use App\Models\student;
+use App\Models\teacher;
 
-class HomeworksController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,7 @@ class HomeworksController extends Controller
      */
     public function index()
     {
-        $grades = grade::all();
-        return view('Homework.index', compact('grades'));
+        return view('Profile.index');
     }
 
     /**
@@ -25,7 +26,8 @@ class HomeworksController extends Controller
      */
     public function create()
     {
-        //
+        $user = Auth::user();
+        return view('Profile.create', compact('user'));
     }
 
     /**
@@ -36,7 +38,27 @@ class HomeworksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'phone' => 'required',
+            'user_id' => 'unique:column'
+            ]);
+
+            $user = Auth::user()->id;
+            $student = Student::Create([
+                'student_name' => $request->input('student_name'),
+                'school_name' => $request->input('school_name'),
+                'class' => $request->input('class_name'),
+                'address' => $request->input('address'),
+                'phone'=> $request->input('phone'),
+                'user_id'=> $user,
+                'grade_id' => 1,
+            ]);
+            
+            return redirect('/dashboard');
+            
+        
+
+        
     }
 
     /**

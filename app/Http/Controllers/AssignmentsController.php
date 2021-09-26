@@ -15,7 +15,7 @@ class AssignmentsController extends Controller
     public function index()
     {
         $grades = grade::all();
-        return view('Teacher.Assignment.index', compact('grades'));
+        return view('Assignment.index', compact('grades'));
     }
 
     /**

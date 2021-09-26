@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\classesController;
 use App\Http\Controllers\AttendancesController;
 use App\Http\Controllers\HomeworksController;
@@ -10,9 +10,9 @@ use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\routinesController;
 use App\Http\Controllers\AssignmentsController;
 use App\Http\Controllers\askMeController;
+use App\Http\Controllers\ProfileController;
 
 
-use App\Http\Controllers\student\SclassesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,8 +31,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
 
-Route::get('/dashboard', [TeacherController::class, 'TeacherDashboard'])->name('dashboard');
-Route::get('/std/dashboard', [TeacherController::class, 'Dashboard'])->name('stdashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 Route::resource('/class', classesController::class);
 Route::resource('/attendance', attendancesController::class);
@@ -42,12 +41,12 @@ Route::resource('/student', StudentsController::class);
 Route::resource('/routine', routinesController::class);
 Route::resource('/assignment', AssignmentsController::class);
 Route::resource('/askme', askMeController::class);
+Route::resource('profile', ProfileController::class);
 
 // Students Routes
-Route::resource('/sclass', SclassesController::class);
+
 });
 
-Route::resource('/teacher', TeachersController::class)->middleware('auth');
 
 // Route::get('/std/dashboard', function(){
 //     return view('dashboard')->name('stdashboard');

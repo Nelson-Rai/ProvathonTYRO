@@ -19,7 +19,7 @@ class AttendancesController extends Controller
     {
         $grades = grade::all();
         $attendances = attendance::all();
-        return view('Teacher.Attendance.index', compact('grades','attendances'));
+        return view('Attendance.index', compact('grades','attendances'));
     }
 
     /**

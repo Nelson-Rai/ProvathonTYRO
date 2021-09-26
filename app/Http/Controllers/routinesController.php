@@ -13,7 +13,7 @@ class routinesController extends Controller
      */
     public function index()
     {
-        return view('Teacher.Routine.index');
+        return view('Routine.index');
     }
 
     /**

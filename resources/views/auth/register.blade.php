@@ -23,7 +23,7 @@
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+                <x-input id="email" class="block mt-1 w-full " type="email" name="email" :value="old('email')" required />
             </div>
 
             <!-- Password -->
@@ -43,6 +43,18 @@
                 <x-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
                                 name="password_confirmation" required />
+            </div>
+
+            {{-- Register user Role type --}}
+            <div class="mt-4">
+                <x-label for="role_id" value="{{ __('Register as:') }}" />
+                <select name="role_id" class="block mt-1 w-full rounded-md shadow-sm 
+                    border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 
+                    focus:ring-opacity-50" id="">
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                </select>
+
             </div>
 
             <div class="flex items-center justify-end mt-4">

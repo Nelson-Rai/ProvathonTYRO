@@ -5,9 +5,6 @@
 @endsection
 
 @section('content')
-<div class="flex justify-end">
-    <a href="{{ route('class.create') }}"><button class="mr-4 mt-4 bg-gray-700 rounded-full py-2 px-4 text-lg text-white font-mono font-semibold ">Create Class</button></a>
-</div>
     
     <div class="mt-4 grid grid-flow-row grid-cols-3 grid-rows-3 gap-4">
         @foreach ($grades as $grade)

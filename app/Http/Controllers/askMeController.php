@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Role;
+use Illuminate\Support\Facades\Auth;
 
 class askMeController extends Controller
 {
@@ -13,7 +15,10 @@ class askMeController extends Controller
      */
     public function index()
     {
-        return view('Teacher.askMe.index');
+        $roles = Role::all();
+        $user = Auth::user();
+        return view('askMe.index', compact('roles','user'));
+        
     }
 
     /**

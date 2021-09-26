@@ -17,6 +17,17 @@ class CreateAttendancesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('student_id');
             $table->string('status');
+            $table->unsignedBigInteger('teacher_id');
+            $table->foreign('student_id')
+                ->constrained()
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+            $table->foreign('teacher_id')
+                ->constrained()
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Role;
 
 class student extends Model
 {
@@ -11,10 +12,14 @@ class student extends Model
 
     protected $fillable = [
         'student_name',
+        'school_name',
         'class',
         'address',
         'phone',
         'user_id',
         'grade_id',
     ];
+
+
+
 }

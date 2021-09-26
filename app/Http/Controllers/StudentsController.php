@@ -18,7 +18,7 @@ class StudentsController extends Controller
     {
         $students = student::all();
         $grades = grade::all();
-        return view('Teacher.Students.index', compact('students','grades'))->with('no',1);
+        return view('Students.index', compact('students','grades'))->with('no',1);
     }
 
     /**
